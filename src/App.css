@@ -4,6 +4,7 @@
   background-image: url('./assets/vackground-com-0F2pC8_DwvM-unsplash.jpg');
   min-height: 100vh;
   background-size: cover;
+  
 }
 
 .glass {
@@ -23,6 +24,14 @@ backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.bg-blue {
+.bg-color {
   background-color: #F8F8FC;
+}
+
+.gray-icon {
+  color: #C2C2C2;
+}
+
+.space {
+  min-height: 20rem;
 }
