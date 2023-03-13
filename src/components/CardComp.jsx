@@ -14,7 +14,7 @@ const CardComp = (props) => {
         />
         <div className="row text-center mx-3 pb-1 gray-icon">
           <div className="col">
-            <FontAwesomeIcon icon={faHeart} className="" />
+            <FontAwesomeIcon icon={faHeart} onClick={props.favoriteBut} />
           </div>
           <div className="col">
             <FontAwesomeIcon icon={faMessage} />
