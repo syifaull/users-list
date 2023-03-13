@@ -6,7 +6,11 @@ import { Card } from "react-bootstrap";
 const CardComp = (props) => {
   return (
     <div>
-      <Card style={{ width: "10rem" }} className="bg-color">
+      <Card
+        style={{ width: "10rem" }}
+        className="bg-color"
+        onClick={props.detail}
+      >
         <Card.Img
           variant="top"
           src="https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg"

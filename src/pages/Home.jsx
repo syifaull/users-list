@@ -1,11 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import CardComp from "../components/CardComp";
 import FooterComp from "../components/FooterComp";
 
 const Home = () => {
   const [users, setUsers] = useState([]);
   const [favorite, setFavorite] = useState([]);
+  const navigate = useNavigate();
 
   const getUsers = async () => {
     axios
@@ -35,6 +37,21 @@ const Home = () => {
     localStorage.setItem("favorite", JSON.stringify(favorite));
   };
 
+  const handleDetail = (user) => {
+    navigate("/detail", {
+      state: {
+        id: user.id,
+        name: user.name,
+        username: user.username,
+        email: user.email,
+        address: user.address,
+        phone: user.phone,
+        website: user.website,
+        company: user.company,
+      },
+    });
+  };
+
   useEffect(() => {
     getUsers();
   }, []);
@@ -52,6 +69,7 @@ const Home = () => {
                 <CardComp
                   name={user.name}
                   favoriteBut={() => handleFavorite(user)}
+                  detail={() => handleDetail(user)}
                 />
               </div>
             );
